@@ -44,10 +44,9 @@ const orm = {
 		let queryString = `UPDATE ${table}`;
 
 		queryString += ' SET ';
-		queryString += 'devoured = 1';
+		queryString += objToSql(objColVals);
 		queryString += ' WHERE ';
 		queryString += condition;
-		queryString += ';';
 
 		connection.query(queryString, (err, result) => {
 			if (err) {
