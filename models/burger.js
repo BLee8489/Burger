@@ -1,8 +1,8 @@
 const orm = require("../config/orm.js");
 
-const cat = {
+const burger = {
   all(cb) {
-    orm.all('burger', (res) => cb(res));
+    orm.all('burgers', (res) => cb(res));
   },
   // The variables cols and vals are arrays.
   create(cols, vals, cb) {
@@ -17,4 +17,4 @@ const cat = {
 };
 
 
-module.exports = cat;
+module.exports = burger;

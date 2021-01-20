@@ -1,32 +1,65 @@
-<h1>Eat-The-Burger!</h1>
 <img class="burgerImg" src="{{{./public/assets/img/burger.jpg}}}">
 
-<ul id="displayBurger">
-    {{#each burgers}}
-    {{#unless this.devoured}}
-    {{id}}.{{burger_name}}
-    <button value={{id}} class="devouredID">Devour it!</button><br>
-    {{/unless}}
-    {{/each}}
-</ul>
+<div class="container">
+    <div class="row">
+        <h1 class="text-center">Eat-The-Burger!</h1>
+        <div class="d-flex justify-content-center">
+            <img src="/assets/img/burger.png" alt="burger">
+        </div>
 
-<h2>Burgers that are devoured.</h2>
-
-<div id="all-devoured">
-    {{#each burgers}}
-    {{#if this.devoured}}
-    {{id}}.{{burger_name}}<br>
-    {{/if}}
-    {{/each}}
-</div>
-
-<h2>Add a Burger</h2>
-<form id="create-form">
-
-    <div class="form-group">
-        <label for="ca">Which burger would you like to order?</label>
-        <input type="text" id="burger_input" name="name">
     </div>
 
-    <button id="submitButton" type="submit">Submit Burger</button>
-</form>
+    <div class="row">
+        <div class="col-md-6">
+            <h5 class="text-center">Burgers Updated</h5>
+            <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+                <ul>
+                    {{burger_name}} <br>
+                    <button class="devour-button btn btn-success" data-id="{{this.id}}"
+                        data-burgerDevoured="{{devoured}}">"Eat Me"</button>
+                </ul>
+
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h5 class="text-center">Devoured</h5>
+            <ul>
+                {{#each burgers}}
+                {{#if devoured}}
+                <ul>
+                    {{burger_name}} <br>
+                    <button class="delete-burger btn btn-success" data-id="{{this.id}}">DELETE</button>
+                </ul>
+
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="d-flex justify-content-center">
+            <h5>Add Another Burger</h5>
+        </div>
+        <div class="d-flex justify-content-center">
+            <div class="card">
+                <div class="card-body">
+                    <form id="create-form">
+                        <div class="form-group">
+                            <input type="text" id="burger-name" name="name">
+                        </div>
+                        <br>
+                        <div class="text-center">
+                            <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
