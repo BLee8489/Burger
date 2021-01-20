@@ -1,4 +1,4 @@
-const mysql = require("mysql");
+const mysql = require('mysql');
 
 let connection;
 if (process.env.JAWSDB_URL) {
@@ -12,7 +12,7 @@ connection = mysql.createConnection({
   password: "password",
   database: "burgers_db",
 });
-
+}
 // Make connection.
 connection.connect((err) => {
   if (err) {
