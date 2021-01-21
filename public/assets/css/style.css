@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(243, 215, 125);
+  background-color: rgb(248, 224, 145);
 }
 
 img {
@@ -12,5 +12,5 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 25%;
 }
