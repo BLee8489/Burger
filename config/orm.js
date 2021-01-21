@@ -40,11 +40,11 @@ const orm = {
 			cb(result);
 		});
 	},
-	update(table, condition, cb) {
+	update(table, objColVals, condition, cb) {
 		let queryString = `UPDATE ${table}`;
 
 		queryString += ' SET ';
-		queryString += objToSql(objColVals);
+		queryString += objColVals;
 		queryString += ' WHERE ';
 		queryString += condition;
 
